@@ -1,7 +1,8 @@
-var express = require('express');
-var router = express.Router();
+/* This route is here to test the general functioning of the backend. It
+* is therefore a dummy route */
+const express = require('express');
+const router = express.Router();
 
-/* GET users listing. */
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
