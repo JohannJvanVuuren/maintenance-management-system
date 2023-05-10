@@ -1,0 +1,17 @@
+/* Global reset */
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Setting the global font size so that 1rem = 10px for ease of reference */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+}

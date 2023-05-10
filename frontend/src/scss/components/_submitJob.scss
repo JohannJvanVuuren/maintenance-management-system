@@ -1,0 +1,25 @@
+/* Styling of the submit job form */
+form {
+  border: 1px solid #CCC;
+  border-radius: 1em;
+  background-color: $mid-shadow;
+
+  /* The submit button styles and effects */
+  .btn-submit {
+    border: none;
+    border-radius: 0.5rem;
+    background-color: $dark-red;
+    box-shadow: 4px 4px 4px $black,
+    -1px -1px 3px $light-nude;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $mid-red;
+    }
+
+    &:active {
+      box-shadow: 2px 2px 2px $black,
+      -0.5px -0.5px 1.5px $light-nude;
+    }
+  }
+}

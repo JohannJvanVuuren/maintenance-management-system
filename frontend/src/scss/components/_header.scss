@@ -1,0 +1,37 @@
+/* Import to allow the use of variables */
+@import '../abstract/variables';
+
+/* Styling of the header container as a whole */
+.header-container {
+  background: $mid-shadow;
+  border-radius: 1rem;
+  box-shadow: 1rem 1rem 1rem $black,
+  -1px -1px 6px $light-nude;
+
+  .header-title {
+    cursor: pointer;
+  }
+
+  /* Styling of the navigation buttons */
+  .header-navigation {
+    .btn-nav {
+      border: none;
+      border-radius: 0.5rem;
+      background-color: $dark-red;
+      width: 20rem;
+      box-shadow: 4px 4px 4px $black,
+      -1px -1px 3px $light-nude;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $mid-red;
+      }
+
+      &:active {
+        box-shadow: 2px 2px 2px $black,
+      -0.5px -0.5px 1.5px $light-nude;
+      }
+    }
+
+  }
+}

@@ -1,0 +1,7 @@
+body {
+    background-image: url('./scss/images/Escalator.png');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}

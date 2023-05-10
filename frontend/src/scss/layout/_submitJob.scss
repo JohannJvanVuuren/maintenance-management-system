@@ -1,0 +1,20 @@
+/* Layout of the submit job form */
+form {
+  margin: 8rem auto;
+  width: 40rem;
+  padding: 2rem;
+
+  input {
+    display: block;
+    margin: 0.5rem;
+    padding: 0.25rem;
+  }
+
+  /* Layout of the submit button */
+  .btn-submit {
+    margin-top: 2rem;
+    width: 5rem;
+    width: 20rem;
+    padding: 1rem;
+  }
+}

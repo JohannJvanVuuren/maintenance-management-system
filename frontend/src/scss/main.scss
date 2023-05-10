@@ -1,0 +1,15 @@
+/* The import of the different SCSS files used by the preprocessor to generate the main css stylesheet */
+@import 'abstract/variables';
+
+@import 'base/reset';
+@import 'base/typography';
+
+@import 'components/header';
+@import 'components/landingPage';
+@import 'components/submitJob';
+
+@import 'layout/header';
+@import 'layout/landingPage';
+@import 'layout/submitJob';
+
+@import 'vendors/googleFonts';

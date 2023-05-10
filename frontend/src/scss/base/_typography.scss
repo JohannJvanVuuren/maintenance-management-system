@@ -1,0 +1,75 @@
+/* Import to allow the use of variables */
+@import '../abstract/variables';
+
+/* Typography of the header that appears on all renders */
+.header-container {
+  h1 {
+    color: $light-nude;
+    text-align: center;
+    font-size: 5rem;
+    text-shadow: 2px 2px 6px $dark-nude;
+    text-transform: uppercase;
+  }
+
+  .header-title {
+    text-decoration: none;
+  }
+
+  /* Typography of the navigation buttons */
+  .header-navigation {
+    .btn-nav {
+      font-weight: 900;
+      color: $light-nude;
+    }
+  }
+}
+
+/* Typography of the landing page that greets users when they navigate to the page */
+.landing-container {
+  text-align: center;
+
+  h1 {
+    font-size: 5rem;
+    text-transform: uppercase;
+    color: $dark-red;
+    text-shadow: 2px 2px 6px $black;
+    font-weight: 300;
+  }
+
+  p {
+    font-size: 1.8rem;
+    color: $light-nude;
+  }
+}
+
+/* Typography of the submit job form */
+.submit-job-container {
+
+  input {
+    &[type='date'] {
+      font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica;
+      font-weight: 900;
+      color: $dark-red;
+      text-align: center;
+    }
+  }
+
+  form {
+    label,
+    p {
+      font-weight: 900;
+      color: $light-nude;
+      font-size: 1.8rem;
+      text-transform: uppercase;
+    }
+
+    .label-radio {
+      font-size: 1.2rem;
+    }
+
+    .btn-submit {
+      font-weight: 900;
+      color: $light-nude;
+    }
+  }
+}

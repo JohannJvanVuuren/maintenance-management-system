@@ -1,0 +1,192 @@
+/* The import of the different SCSS files used by the preprocessor to generate the main css stylesheet */ /* Colour schema */
+/* Reds */
+/* Blues */
+/* Nude */
+/* Silvers */
+/* Shadows */
+/* Global reset */
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,400&display=swap");
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Setting the global font size so that 1rem = 10px for ease of reference */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Lato", Arial, Helvetica, sans-serif;
+}
+
+/* Import to allow the use of variables */ /* Colour schema */
+/* Reds */
+/* Blues */
+/* Nude */
+/* Silvers */
+/* Shadows */
+/* Typography of the header that appears on all renders */
+.header-container {
+  /* Typography of the navigation buttons */
+}
+.header-container h1 {
+  color: #F4E4D6;
+  text-align: center;
+  font-size: 5rem;
+  text-shadow: 2px 2px 6px #D2945E;
+  text-transform: uppercase;
+}
+.header-container .header-title {
+  text-decoration: none;
+}
+.header-container .header-navigation .btn-nav {
+  font-weight: 900;
+  color: #F4E4D6;
+}
+
+/* Typography of the landing page that greets users when they navigate to the page */
+.landing-container {
+  text-align: center;
+}
+.landing-container h1 {
+  font-size: 5rem;
+  text-transform: uppercase;
+  color: #800000;
+  text-shadow: 2px 2px 6px #000000;
+  font-weight: 300;
+}
+.landing-container p {
+  font-size: 1.8rem;
+  color: #F4E4D6;
+}
+
+/* Typography of the submit job form */
+.submit-job-container input[type=date] {
+  font-family: "Lato", "Helvetica Neue", Arial, Helvetica;
+  font-weight: 900;
+  color: #800000;
+  text-align: center;
+}
+.submit-job-container form label,
+.submit-job-container form p {
+  font-weight: 900;
+  color: #F4E4D6;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+}
+.submit-job-container form .label-radio {
+  font-size: 1.2rem;
+}
+.submit-job-container form .btn-submit {
+  font-weight: 900;
+  color: #F4E4D6;
+}
+
+/* Import to allow the use of variables */ /* Colour schema */
+/* Reds */
+/* Blues */
+/* Nude */
+/* Silvers */
+/* Shadows */
+/* Styling of the header container as a whole */
+.header-container {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+  box-shadow: 1rem 1rem 1rem #000000, -1px -1px 6px #F4E4D6;
+  /* Styling of the navigation buttons */
+}
+.header-container .header-title {
+  cursor: pointer;
+}
+.header-container .header-navigation .btn-nav {
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #800000;
+  width: 20rem;
+  box-shadow: 4px 4px 4px #000000, -1px -1px 3px #F4E4D6;
+  cursor: pointer;
+}
+.header-container .header-navigation .btn-nav:hover {
+  background-color: #B30000;
+}
+.header-container .header-navigation .btn-nav:active {
+  box-shadow: 2px 2px 2px #000000, -0.5px -0.5px 1.5px #F4E4D6;
+}
+
+/* Styling of the landing page container */
+.landing-container {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+}
+
+/* Styling of the submit job form */
+form {
+  border: 1px solid #CCC;
+  border-radius: 1em;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* The submit button styles and effects */
+}
+form .btn-submit {
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #800000;
+  box-shadow: 4px 4px 4px #000000, -1px -1px 3px #F4E4D6;
+  cursor: pointer;
+}
+form .btn-submit:hover {
+  background-color: #B30000;
+}
+form .btn-submit:active {
+  box-shadow: 2px 2px 2px #000000, -0.5px -0.5px 1.5px #F4E4D6;
+}
+
+/* Layout of the header container as well as the navigation container and buttons */
+.header-container {
+  margin: 2rem 2rem 0 2rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.header-container .header-navigation {
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+}
+.header-container .header-navigation .btn-nav {
+  padding: 1rem;
+  margin: 0 0.5rem;
+}
+
+/* Layout of the landing page container */
+.landing-container {
+  margin: 15rem auto;
+  width: 50rem;
+  padding: 4rem;
+}
+
+/* Layout of the submit job form */
+form {
+  margin: 8rem auto;
+  width: 40rem;
+  padding: 2rem;
+  /* Layout of the submit button */
+}
+form input {
+  display: block;
+  margin: 0.5rem;
+  padding: 0.25rem;
+}
+form .btn-submit {
+  margin-top: 2rem;
+  width: 5rem;
+  width: 20rem;
+  padding: 1rem;
+}
+
+/* Import of Google Font 'Lato' */
+
+/*# sourceMappingURL=main.css.map */
