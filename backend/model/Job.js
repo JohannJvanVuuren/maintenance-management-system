@@ -1,7 +1,7 @@
 /* Creation of the schema of the database. The Mongoose documentation
 * was used as reference and not the Hyperion notes. */
 
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 const { Schema, model } = mongoose;
 
 let jobSchema = new Schema({

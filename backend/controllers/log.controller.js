@@ -1,5 +1,5 @@
 /* This controller is for creating new records */
-exports.saveNewJob = (req, res) => {
+const saveNewJob = (req, res) => {
     const newJob = {
         date: req.body.date,
         description: req.body.description,
@@ -7,3 +7,5 @@ exports.saveNewJob = (req, res) => {
         priority: req.body.priority
     }
 }
+
+export { saveNewJob }

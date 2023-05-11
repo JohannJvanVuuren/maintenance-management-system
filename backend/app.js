@@ -1,20 +1,21 @@
 /* Imports of all modules needed in app.js */
-const createError = require('http-errors');
-const express = require('express');
-const path = require('path');
-const cookieParser = require('cookie-parser');
-const logger = require('morgan');
-const helmet = require('helmet');
-const crypto = require('crypto');
-const cors = require('cors');
+import createError from 'http-errors';
+import express from 'express';
+import path from 'path';
+import cookieParser from 'cookie-parser';
+import logger from 'morgan';
+import helmet from 'helmet';
+import crypto from 'crypto';
+import cors from 'cors';
 
-const usersRouter = require('./routes/users');
-const saveNewJobRouter = require('./routes/saveNewJob');
+// const usersRouter = require('./routes/users.js')
+import usersRouter from './routes/users.js';
+import saveNewJobRouter from './routes/saveNewJob.js';
 
 const app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', ('./views'));
 app.set('view engine', 'jade');
 
 app.use(cors());
@@ -22,7 +23,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('./public'));
 app.use(helmet());
 
 /* Helmet default security settings for the app */
@@ -56,4 +57,4 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
+export default app;

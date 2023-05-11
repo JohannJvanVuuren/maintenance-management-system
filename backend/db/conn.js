@@ -1,6 +1,9 @@
-/* Import of the MongoClient class used for making connections to MongoDB. */
+/* Import and configuration of dotenv to access variables in the .env file*/
+import * as dotenv from "dotenv";
+dotenv.config();
 
-const mongoClient = require('mongodb').MongoClient;
+/* Import of the MongoClient class used for making connections to MongoDB. */
+import { MongoClient } from 'mongodb';
 
 /* The connection string needed to connect to the MMSDB database */
 const connectionString = process.env.MONGODB_CONNECTION_STRING || '';

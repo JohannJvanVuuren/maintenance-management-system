@@ -1,19 +1,18 @@
 #!/usr/bin/env node
 
 /* Import of Mongoose to enable connection to the MongoDB database MMSDB */
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 
 
-/* Import and configuration of dotenv to access variables in the .env file*/
-require('dotenv').config();
 
 /**
  * Module dependencies.
  */
 
-const app = require('../app');
-const debug = require('debug')('backend:server');
-const http = require('http');
+import app from '../app.js';
+import debugLib from 'debug';
+import http from 'http';
+const debug = debugLib('backend:server');
 
 /**
  * Get port from environment and store in Express.

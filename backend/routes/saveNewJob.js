@@ -1,17 +1,16 @@
 /* Import of Express needed for instantiation of Router */
-const express = require('express');
+import express from 'express';
 /* Importing the database connection */
-const db = require('../db/conn');
+import db from '../db/conn.js'
 /* Import of primary key identifier */
-const ObjectId = require('mongodb').ObjectId;
+import { ObjectId } from 'mongodb';
 
 /* Creating an instance of Router */
 const router = express.Router();
 
 /* Importing the log.controller db interaction controller */
-const logController = require('../controllers/log.controller');
+import { saveNewJob } from '../controllers/log.controller.js';
 
-router.post('/', logController.saveNewJob);
+router.post('/', saveNewJob);
 
-
-module.exports = router;
+export default router;
