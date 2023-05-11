@@ -1,5 +1,12 @@
 #!/usr/bin/env node
 
+/* Import of Mongoose to enable connection to the MongoDB database MMSDB */
+const mongoose = require('mongoose');
+
+
+/* Import and configuration of dotenv to access variables in the .env file*/
+require('dotenv').config();
+
 /**
  * Module dependencies.
  */

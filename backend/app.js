@@ -9,7 +9,7 @@ const crypto = require('crypto');
 const cors = require('cors');
 
 const usersRouter = require('./routes/users');
-const submitJobRouter = require('./routes/submitJob');
+const saveNewJobRouter = require('./routes/saveNewJob');
 
 const app = express();
 
@@ -38,7 +38,7 @@ helmet.contentSecurityPolicy({
 })
 
 app.use('/users', usersRouter);
-app.use('/submitJob', submitJobRouter);
+app.use('/saveNewJob', saveNewJobRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
