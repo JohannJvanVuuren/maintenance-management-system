@@ -27,7 +27,7 @@ export const SubmitJob = () => {
 
         /* Configurations for the axios request to the backend that will send the information to be
         * stored in the database */
-        const url = 'http://localhost:8000/submitJob';
+        const url = 'http://localhost:8000/saveNewJob';
         const config = {
             date: date,
             description: description,

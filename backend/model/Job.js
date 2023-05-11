@@ -28,6 +28,6 @@ let jobSchema = new Schema({
 })
 
 /* The creation of the model also based on the Mongoose documentation */
-const Job = model('Job', JobSchema);
+const Job = model('Job', jobSchema);
 
 export default Job;

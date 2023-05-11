@@ -1,5 +1,5 @@
 /* Import and configuration of dotenv to access variables in the .env file*/
-import * as dotenv from "dotenv";
+import dotenv from "dotenv";
 dotenv.config();
 
 /* Import of the MongoClient class used for making connections to MongoDB. */

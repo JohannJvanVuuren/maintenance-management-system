@@ -1,5 +1,15 @@
 # Getting Started with Create React App
 
+## Things to include
+
+Archival is done by deleting record. The reason for this is that the cloud archive service on Atlas is a paid service.  
+
+
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

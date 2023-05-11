@@ -10,7 +10,10 @@ import cors from 'cors';
 
 // const usersRouter = require('./routes/users.js')
 import usersRouter from './routes/users.js';
-import saveNewJobRouter from './routes/saveNewJob.js';
+import saveNewJobRouter from './routes/dbRoutes.js';
+import getJobListRouter from './routes/dbRoutes.js';
+import updateJobRouter from './routes/dbRoutes.js';
+import deleteJobRouter from './routes/dbRoutes.js';
 
 const app = express();
 
@@ -40,6 +43,9 @@ helmet.contentSecurityPolicy({
 
 app.use('/users', usersRouter);
 app.use('/saveNewJob', saveNewJobRouter);
+app.use('/getJobList', getJobListRouter);
+app.use('/updateJob', updateJobRouter);
+app.use('/deleteJob', deleteJobRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

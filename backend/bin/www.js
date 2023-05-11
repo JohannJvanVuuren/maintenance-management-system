@@ -3,8 +3,6 @@
 /* Import of Mongoose to enable connection to the MongoDB database MMSDB */
 import mongoose from "mongoose";
 
-
-
 /**
  * Module dependencies.
  */
