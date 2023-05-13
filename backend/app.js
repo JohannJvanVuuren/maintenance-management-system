@@ -10,10 +10,12 @@ import cors from 'cors';
 
 // const usersRouter = require('./routes/users.js')
 import usersRouter from './routes/users.js';
-import saveNewJobRouter from './routes/dbRoutes.js';
-import getJobListRouter from './routes/dbRoutes.js';
-import updateJobRouter from './routes/dbRoutes.js';
-import deleteJobRouter from './routes/dbRoutes.js';
+import saveNewJobRouter from './routes/saveNewJob.js';
+import findJobRouter from './routes/findJob.js'
+import getJobListByDateRouter from './routes/getJobListByDate.js';
+import getJobListByStatusRouter from './routes/getJobListByStatus.js'
+import updateJobRouter from './routes/updateJob.js';
+import deleteJobRouter from './routes/deleteJob.js';
 
 const app = express();
 
@@ -41,9 +43,12 @@ helmet.contentSecurityPolicy({
   }
 })
 
+/* Enabling of the different routes */
 app.use('/users', usersRouter);
 app.use('/saveNewJob', saveNewJobRouter);
-app.use('/getJobList', getJobListRouter);
+app.use('/findJob', findJobRouter);
+app.use('/getJobListByDate', getJobListByDateRouter);
+app.use('/getJobListByStatus', getJobListByStatusRouter);
 app.use('/updateJob', updateJobRouter);
 app.use('/deleteJob', deleteJobRouter);
 

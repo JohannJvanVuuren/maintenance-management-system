@@ -1,6 +1,5 @@
 /* Creation of the schema of the database. The Mongoose documentation
 * was used as reference and not the Hyperion notes. */
-
 import mongoose from 'mongoose';
 const { Schema, model } = mongoose;
 
@@ -23,7 +22,7 @@ let jobSchema = new Schema({
     },
     status: {
         type: String,
-        default: 'Submitted'
+        required: true
     }
 })
 
