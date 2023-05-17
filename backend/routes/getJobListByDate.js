@@ -5,8 +5,9 @@ import express from 'express';
 const router = express.Router();
 
 /* Importing the log.controller db interaction controller */
-import * as logController from '../controllers/getJobListByDate.js';
+import { getJobListByDate } from '../controllers/log.controller.js';
 
-router.get('/',logController.getJobListByDate);
+/* Setting up the getJobListByDate router and its controller */
+router.get('/',getJobListByDate);
 
 export default router;

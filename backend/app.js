@@ -11,11 +11,13 @@ import cors from 'cors';
 // const usersRouter = require('./routes/users.js')
 import usersRouter from './routes/users.js';
 import saveNewJobRouter from './routes/saveNewJob.js';
-import findJobRouter from './routes/findJob.js'
+import findJobRouter from './routes/findJob.js';
 import getJobListByDateRouter from './routes/getJobListByDate.js';
-import getJobListByStatusRouter from './routes/getJobListByStatus.js'
+import getJobListByStatusRouter from './routes/getJobListByStatus.js';
+import filterJobsByStatusRouter from './routes/filterJobsByStatus.js';
 import updateJobRouter from './routes/updateJob.js';
-import deleteJobRouter from './routes/deleteJob.js';
+import archiveJobRouter from './routes/archiveJob.js';
+import bulkStatusChangeRouter from './routes/bulkStatusChange.js';
 
 const app = express();
 
@@ -49,8 +51,10 @@ app.use('/saveNewJob', saveNewJobRouter);
 app.use('/findJob', findJobRouter);
 app.use('/getJobListByDate', getJobListByDateRouter);
 app.use('/getJobListByStatus', getJobListByStatusRouter);
+app.use('/filterJobsByStatus', filterJobsByStatusRouter);
 app.use('/updateJob', updateJobRouter);
-app.use('/deleteJob', deleteJobRouter);
+app.use('/archiveJob', archiveJobRouter);
+app.use('/bulkStatusChange', bulkStatusChangeRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

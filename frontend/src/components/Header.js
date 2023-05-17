@@ -12,7 +12,11 @@ export const Header = () => {
                 to={'/'}
                 className={'header-title'}
             >
-                <h1>Maintenance Management System (MMS)</h1>
+                <h1
+                    data-testid={"text-content"}
+                >
+                    Maintenance Management System (MMS)
+                </h1>
             </Link>
             <div className={'header-navigation'}>
                 <Link
@@ -27,6 +31,13 @@ export const Header = () => {
                 >
                     <button className={'btn btn-nav'}>
                         List Jobs By Date
+                    </button>
+                </Link>
+                <Link
+                    to={'/listJobsByStatus'}
+                >
+                    <button className={'btn btn-nav'}>
+                        List By Status
                     </button>
                 </Link>
                 <Link
@@ -55,6 +66,13 @@ export const Header = () => {
                 >
                     <button className={'btn btn-nav'}>
                         Archive Job
+                    </button>
+                </Link>
+                <Link
+                    to={'/viewArchive'}
+                >
+                    <button className={'btn btn-nav'}>
+                        View Archive
                     </button>
                 </Link>
 

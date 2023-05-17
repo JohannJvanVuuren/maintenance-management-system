@@ -28,19 +28,19 @@ export const ListJobsByDate = () => {
         axios.get(url)
             .then(response => {
                 setJobs(response.data);
-                console.log(response.data)
             })
             .catch(error => {
-                console.log('Error', error.message);
+                console.log(error);
             })
     }, []); //No dependencies, so the hook will only run once when the page is rendered
 
     return (
-            /* Rendering of a React-bootstrap table suited for this purpose */
+        <div>
+            <h1 className={'section-titles'}>List jobs by date</h1>
+            {/* Rendering of a React-bootstrap table suited for this purpose */}
             <Table striped bordered hover variant="dark"
                    responsive
-                   className={'mt-5'}
-                   style={{width: '90%', marginLeft: 'auto', marginRight: 'auto'}}
+                   className={'mt-5 table'}
             >
                 <thead>
                 <tr className={'table-header'}>
@@ -56,18 +56,27 @@ export const ListJobsByDate = () => {
                 {/* The data is received back as an array of objects. So the Array.map method is used to map loop
                  through the array and display the data of the individual job objects */}
                 {jobs.map((job, index) => {
-                    return (
-                        <tr key={index} className={'table-row'}>
-                            <td className={'h5'}>{job._id}</td>
-                            <td className={'h5'}>{(job.date).slice(0, 10)}</td>
-                            <td className={'h5'}>{job.description}</td>
-                            <td className={'h5'}>{job.location}</td>
-                            <td className={'h5'}>{job.priority}</td>
-                            <td className={'h5'}>{job.status}</td>
+                    if (job.__v === 0) {
+                        return (
+                            <tr key={index} className={'table-row'}>
+                                <td className={'h5'}>{job._id}</td>
+                                <td className={'h5'}>{(job.date).slice(0, 10)}</td>
+                                <td className={'h5'}>{job.description}</td>
+                                <td className={'h5'}>{job.location}</td>
+                                <td className={'h5'}>{job.priority}</td>
+                                <td className={'h5'}>{job.status}</td>
+                            </tr>
+                        )
+                    } else {
+                        return (
+                        <tr>
+                            <td colSpan={7}>No records to display</td>
                         </tr>
-                    )
+                        )
+                    }
                 })}
                 </tbody>
             </Table>
+        </div>
     )
 }

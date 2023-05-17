@@ -49,8 +49,9 @@ export const UpdateJobForm = () => {
 
         /* Configurations for the axios request to the backend that will send the information to be
         * stored in the database */
-        const url = `http://localhost:8000/updateJob/${id}`;
+        const url = `http://localhost:8000/updateJob`;
         const config = {
+            id: id,
             date: date,
             description: description,
             location: location,
@@ -59,8 +60,9 @@ export const UpdateJobForm = () => {
         }
 
         /* The axios request to the backend */
-        axios.patch(url, config)
+        axios.post(url, config)
             .then(response => {
+                console.log(response.data)
                 return response.data
             })
             .catch(error => {
@@ -73,20 +75,6 @@ export const UpdateJobForm = () => {
     return (
         <div className={'submit-job-container'}>
             <form onSubmit={submitHandler}>
-                <label htmlFor={'id'}>
-                    ID:
-                    <input
-                        type={'text'}
-                        id={'id'}
-                        name={'id'}
-                        value={id}
-                        readOnly
-                        style={{
-                            fontWeight:900,
-                            color: '#800000'
-                        }}
-                    />
-                </label>
                 <label htmlFor={'date'}>
                     Date:
                     <input
@@ -95,6 +83,20 @@ export const UpdateJobForm = () => {
                         name={'date'}
                         value={`${date}`}
                         onChange={(event) => setDate(event.target.value)}
+                        style={{
+                            fontWeight:900,
+                            color: '#800000'
+                        }}
+                    />
+                </label>
+                <label htmlFor={'id'}>
+                    ID:
+                    <input
+                        type={'text'}
+                        id={'id'}
+                        name={'id'}
+                        value={id}
+                        readOnly
                         style={{
                             fontWeight:900,
                             color: '#800000'
@@ -130,7 +132,8 @@ export const UpdateJobForm = () => {
                     />
                 </label>
                 <label
-                    htmlFor={'status'}
+                    className={'label'}
+                    htmlFor={'priority'}
                     /* Inline styling to override React-Bootstrap default styles */
                     style={{
                         marginTop: 1 + 'rem',
@@ -138,8 +141,8 @@ export const UpdateJobForm = () => {
                 >
                     Priority:
                     <select
-                        id={'status'}
-                        name={'status'}
+                        id={'priority'}
+                        name={'priority'}
                         onChange={(event) => setPriority(event.target.value)}
                         style={{
                             fontWeight: 900,
@@ -147,12 +150,13 @@ export const UpdateJobForm = () => {
                         }}
 
                     >
-                        <option>Current: {priority}</option>
+                        <option>{priority}</option>
                         <option value={'Routine'}>Routine</option>
                         <option value={'Urgent'}>Urgent</option>
                     </select>
                 </label>
                 <label
+                    className={'label'}
                     htmlFor={'status'}
                     /* Inline styling to override React-Bootstrap default styles */
                     style={{
@@ -169,7 +173,7 @@ export const UpdateJobForm = () => {
                             color: '#800000'
                         }}
                     >
-                        <option>Current: {status}</option>
+                        <option>{status}</option>
                         <option value={'In progress'}>In progress</option>
                         <option value={'Completed'}>Completed</option>
                     </select>

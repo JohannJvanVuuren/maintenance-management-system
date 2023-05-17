@@ -1,0 +1,11 @@
+.filter-by-status-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  select {
+    width: 20rem;
+    align-self: center;
+    margin-top: 2rem;
+  }
+}

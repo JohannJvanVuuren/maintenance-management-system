@@ -24,6 +24,19 @@
   }
 }
 
+.section-titles {
+  text-align: center;
+  text-transform: uppercase;
+  margin: 2rem 2rem;
+  font-size: 3rem;
+  color: $light-nude;
+  background: $dark-shadow;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 1rem 1rem 1rem $black,
+  -1px -1px 6px $light-nude;
+}
+
 /* Typography of the landing page that greets users when they navigate to the page */
 .landing-container {
   text-align: center;
@@ -50,7 +63,7 @@
       font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica;
       font-weight: 900;
       color: $dark-red;
-      text-align: center;
+      text-align: left;
     }
   }
 
@@ -70,6 +83,10 @@
     .btn-submit {
       font-weight: 900;
       color: $light-nude;
+    }
+
+    input::placeholder {
+      color: $dark-red;
     }
   }
 }

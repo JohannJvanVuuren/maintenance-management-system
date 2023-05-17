@@ -5,8 +5,9 @@ import express from 'express';
 const router = express.Router();
 
 /* Importing the log.controller db interaction controller */
-import * as logController from '../controllers/updateJob.js';
+import { updateJob } from '../controllers/log.controller.js';
 
-router.patch('/:id', logController.updateJob);
+/* Setting up the updateJob router and its controller */
+router.post('/', updateJob);
 
 export default router;

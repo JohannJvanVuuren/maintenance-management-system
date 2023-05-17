@@ -48,6 +48,18 @@ body {
   color: #F4E4D6;
 }
 
+.section-titles {
+  text-align: center;
+  text-transform: uppercase;
+  margin: 2rem 2rem;
+  font-size: 3rem;
+  color: #F4E4D6;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 1rem 1rem 1rem #000000, -1px -1px 6px #F4E4D6;
+}
+
 /* Typography of the landing page that greets users when they navigate to the page */
 .landing-container {
   text-align: center;
@@ -69,7 +81,7 @@ body {
   font-family: "Lato", "Helvetica Neue", Arial, Helvetica;
   font-weight: 900;
   color: #800000;
-  text-align: center;
+  text-align: left;
 }
 .submit-job-container form label,
 .submit-job-container form p {
@@ -84,6 +96,41 @@ body {
 .submit-job-container form .btn-submit {
   font-weight: 900;
   color: #F4E4D6;
+}
+.submit-job-container form input::placeholder {
+  color: #800000;
+}
+
+.btn-archive {
+  border: none;
+  padding: 0.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  border-radius: 0.5rem;
+  background-color: #800000;
+  color: #F4E4D6;
+}
+
+/* Import to allow use of variables */ /* Colour schema */
+/* Reds */
+/* Blues */
+/* Nude */
+/* Silvers */
+/* Shadows */
+.filter-by-status-container select {
+  border: none;
+  padding: 1rem;
+  font-size: 1.4rem;
+  font-weight: 900;
+  text-align: center;
+  background-color: #F4E4D6;
+  outline: none;
+  border-radius: 1rem;
+  color: #800000;
+}
+.filter-by-status-container select .items {
+  font-weight: 900;
+  color: #800000;
 }
 
 /* Import to allow the use of variables */ /* Colour schema */
@@ -106,7 +153,7 @@ body {
   border: none;
   border-radius: 0.5rem;
   background-color: #800000;
-  width: 20rem;
+  width: 15rem;
   box-shadow: 4px 4px 4px #000000, -1px -1px 3px #F4E4D6;
   cursor: pointer;
 }
@@ -144,6 +191,41 @@ form .btn-submit:active {
   box-shadow: 2px 2px 2px #000000, -0.5px -0.5px 1.5px #F4E4D6;
 }
 
+.table {
+  box-shadow: 1rem 1rem 3rem #000000;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.table h3 {
+  color: #800000;
+}
+.table select {
+  font-weight: 900;
+  color: #800000;
+}
+
+.btn-update {
+  border: none;
+  padding: 0.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  border-radius: 0.5rem;
+  background-color: #800000;
+  color: #F4E4D6;
+}
+
+.filter-by-status-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.filter-by-status-container select {
+  width: 20rem;
+  align-self: center;
+  margin-top: 2rem;
+}
+
 /* Layout of the header container as well as the navigation container and buttons */
 .header-container {
   margin: 2rem 2rem 0 2rem;
@@ -169,22 +251,59 @@ form .btn-submit:active {
 }
 
 /* Layout of the submit job form */
-form {
+.submit-job-container form {
   margin: 8rem auto;
   width: 40rem;
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
   /* Layout of the submit button */
 }
-form input {
+.submit-job-container form input {
   display: block;
-  margin: 0.5rem;
+  margin: 0.5rem 0;
   padding: 0.25rem;
 }
-form .btn-submit {
+.submit-job-container form .submit-form-radio-buttons {
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+}
+.submit-job-container form .submit-form-radio-buttons #urgent,
+.submit-job-container form .submit-form-radio-buttons #routine {
+  width: 2.5rem;
+}
+.submit-job-container form .submit-form-radio-buttons p {
+  margin-right: 3rem;
+}
+.submit-job-container form .submit-form-radio-buttons input {
+  align-self: flex-start;
+  margin: 0.5rem 0;
+}
+.submit-job-container form .submit-form-select .select-label {
+  margin-left: 0 !important;
+}
+.submit-job-container form .submit-form-select select {
+  margin-left: 4rem;
+}
+.submit-job-container form .btn-submit {
   margin-top: 2rem;
   width: 5rem;
   width: 20rem;
   padding: 1rem;
+}
+
+.submit-job-container form {
+  width: 35rem;
+}
+.submit-job-container input {
+  width: 30rem;
+  margin-right: 0;
+}
+.submit-job-container .label {
+  width: 30rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 /* Import of Google Font 'Lato' */

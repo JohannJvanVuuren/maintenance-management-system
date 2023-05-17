@@ -1,22 +1,57 @@
 /* Layout of the submit job form */
-form {
-  margin: 8rem auto;
-  width: 40rem;
-  padding: 2rem;
+.submit-job-container {
+  form {
+    margin: 8rem auto;
+    width: 40rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
 
     input {
       display: block;
-      margin: 0.5rem;
+      margin: 0.5rem 0;
       padding: 0.25rem;
     }
 
-  /* Layout of the submit button */
-  .btn-submit {
-    margin-top: 2rem;
-    width: 5rem;
-    width: 20rem;
-    padding: 1rem;
-  }
-}
+    .submit-form-radio-buttons {
+      margin: 0.5rem 0;
+      display: flex;
+      align-items: center;
 
+      #urgent,
+      #routine {
+        width: 2.5rem;
+      }
+
+      p {
+        margin-right: 3rem;
+
+      }
+
+      input {
+        align-self: flex-start;
+        margin: 0.5rem 0;
+      }
+    }
+
+    .submit-form-select {
+      .select-label {
+        margin-left: 0 !important;
+      }
+
+      select {
+        margin-left: 4rem;
+      }
+    }
+
+    /* Layout of the submit button */
+    .btn-submit {
+      margin-top: 2rem;
+      width: 5rem;
+      width: 20rem;
+      padding: 1rem;
+    }
+  }
+
+}
 

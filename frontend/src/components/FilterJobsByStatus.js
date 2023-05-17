@@ -9,33 +9,44 @@ import '../scss/main.css';
 /* Import of React-Bootstrap styled component */
 import Table from "react-bootstrap/Table";
 
-
-export const ListJobsByStatus = () => {
+export const FilterJobsByStatus = () => {
     /* Declaration and initialisation of the state variable needed in this component */
     const [jobs, setJobs] = useState([]);
+    const [status, setStatus] = useState('');
 
     /* A useEffect hook to run the axios call to the backend to retrieve the required information from
     * the database */
-    useEffect(() => {
 
+    useEffect(() => {
         /* Setup of configuration of the axios call */
-        const url = 'http://localhost:8000/getJobListByStatus';
+        const url = `http://localhost:8000/filterJobsByStatus/${status}`;
 
         /* axios call to the .../getJobList endpoint to get the information that needs to be displayed
         * in this component */
         axios.get(url)
             .then(response => {
                 setJobs(response.data);
+                console.log(response);
+                return response.data;
             })
             .catch(error => {
                 console.log('Error', error.message);
             })
-    }, []); //No dependencies, so the hook will only run once when the page is rendered
+    }, [status]);
 
     return (
-        <div>
-            <h1 className={'section-titles'}>List Jobs by status</h1>
-            {/* Rendering of a React-bootstrap table suited for this purpose */}
+        /* Rendering of a React-bootstrap table suited for this purpose */
+        <div className={'filter-by-status-container'}>
+            <h1 className={'section-titles'}>Filter Jobs by status</h1>
+            <select value={status} onChange={(event) => {
+                event.preventDefault();
+                setStatus(event.target.value);
+            }}>
+                <option className={'items'} disbaled>--Please select a filter--</option>
+                <option className={'items'} value={'Submitted'}>Submitted</option>
+                <option className={'items'} value={'In progress'}>In progress</option>
+                <option className={'items'} value={'Completed'}>Completed</option>
+            </select>
             <Table
                 striped bordered hover variant="dark"
                 responsive
@@ -53,24 +64,23 @@ export const ListJobsByStatus = () => {
                 </thead>
                 <tbody>
                 {/* The data is received back as an array of objects. So the Array.map method is used to map loop
-                 through the array and display the data of the individual job objects */}
+                         through the array and display the data of the individual job objects */}
                 {jobs.map((job, index) => {
                     if (job.__v === 0) {
+                    return (
+                        <tr key={index} className={'table-row'}>
+                            <td className={'h5'}>{job._id}</td>
+                            <td className={'h5'}>{(job.date).slice(0, 10)}</td>
+                            <td className={'h5'}>{job.description}</td>
+                            <td className={'h5'}>{job.location}</td>
+                            <td className={'h5'}>{job.priority}</td>
+                            <td className={'h5'}>{job.status}</td>
+                        </tr>
+                    )} else {
                         return (
-                            <tr key={index} className={'table-row'}>
-                                <td className={'h5'}>{job._id}</td>
-                                <td className={'h5'}>{(job.date).slice(0, 10)}</td>
-                                <td className={'h5'}>{job.description}</td>
-                                <td className={'h5'}>{job.location}</td>
-                                <td className={'h5'}>{job.priority}</td>
-                                <td className={'h5'}>{job.status}</td>
-                            </tr>
-                        )
-                    } else {
-                        return (
-                            <tr>
-                                <td colSpan={7}>No records to display</td>
-                            </tr>
+                        <tr>
+                            <td colSpan={7}>No records to display</td>
+                        </tr>
                         )
                     }
                 })}
@@ -79,4 +89,3 @@ export const ListJobsByStatus = () => {
         </div>
     )
 }
-

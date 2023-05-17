@@ -56,103 +56,115 @@ export const SubmitJob = () => {
     /* The rendering of the submit job input form */
     return (
         <div className={'submit-job-container'}>
-            <form onSubmit={submitHandler}>
-                <label htmlFor={'date'}>
-                    Date:
-                    <input
-                        type={'date'}
-                        id={'date'}
-                        name={'date'}
-                        onChange={(event) => setDate(new Date(event.target.value))}
-                        required
-                    />
-                </label>
-                <label htmlFor={'description'}>
-                    Description:
-                    <input
-                        type={'text'}
-                        id={'description'}
-                        name={'description'}
-                        placeholder={'Description'}
-                        onChange={(event) => setDescription(event.target.value)}
+            <h1 className={'section-titles'}>Submit Task</h1>
+            <form
+                className={'submit-form'}
+                onSubmit={submitHandler}
+            >
+                <div className={'submit-form-textfields'}>
+                    <label htmlFor={'date'}>
+                        Date:
+                        <input
+                            type={'date'}
+                            id={'date'}
+                            name={'date'}
+                            onChange={(event) => setDate(new Date(event.target.value))}
+                            required
+                        />
+                    </label>
+                    <label htmlFor={'description'}>
+                        Description:
+                        <input
+                            type={'text'}
+                            id={'description'}
+                            name={'description'}
+                            placeholder={'Description'}
+                            onChange={(event) => setDescription(event.target.value)}
+                            style={{
+                                fontWeight: 900,
+                                color: '#800000'
+                            }}
+                            required
+                        />
+                    </label>
+                    <label htmlFor={'location'}>
+                        Location:
+                        <input
+                            type={'text'}
+                            id={'location'}
+                            name={'location'}
+                            placeholder={'Location'}
+                            onChange={(event) => setLocation(event.target.value)}
+                            style={{
+                                fontWeight: 900,
+                                color: '#800000'
+                            }}
+                            required
+                        />
+                    </label>
+                </div>
+                {/*<p>Priority</p>*/}
+
+                <div className={'submit-form-radio-buttons'}>
+                    <p>Priority</p>
+                    <label
+                        htmlFor={'urgent'}
+                        className={'label-radio'}
+                    >
+                        Urgent
+                        <input
+                            type={'radio'}
+                            id={'urgent'}
+                            name={'priority'}
+                            value={'Urgent'}
+                            onChange={radioButtonHandler}
+                            // checked={priority === 'urgent'}
+                        />
+                    </label>
+                    <label
+                        htmlFor={'routine'}
+                        className={'label-radio'}
+                        /* Inline style to override React-Bootstrap interference */
+                        style={{marginLeft: 1 + 'rem'}}
+                    >
+                        Routine
+                        <input
+                            className={'radio-second'}
+                            type={'radio'}
+                            id={'routine'}
+                            name={'priority'}
+                            value={'Routine'}
+                            onChange={radioButtonHandler}
+                            // checked={priority === 'routine'}
+                        />
+                    </label>
+                </div>
+                <div className={'submit-form-select'}>
+                    <label
+                        htmlFor={'status'}
+                        className={'select-label'}
+                        /* Inline styling to override React-Bootstrap default styles */
                         style={{
-                            fontWeight: 900,
-                            color: '#800000'
-                        }}
-                        required
-                    />
-                </label>
-                <label htmlFor={'location'}>
-                    Location:
-                    <input
-                        type={'text'}
-                        id={'location'}
-                        name={'location'}
-                        placeholder={'Location'}
-                        onChange={(event) => setLocation(event.target.value)}
-                        style={{
-                            fontWeight: 900,
-                            color: '#800000'
-                        }}
-                        required
-                    />
-                </label>
-                <p>Priority</p>
-                <label
-                    htmlFor={'urgent'}
-                    className={'label-radio'}
-                >
-                    Urgent
-                    <input
-                        type={'radio'}
-                        id={'urgent'}
-                        name={'priority'}
-                        value={'Urgent'}
-                        onChange={radioButtonHandler}
-                        // checked={priority === 'urgent'}
-                    />
-                </label>
-                <label
-                    htmlFor={'routine'}
-                    className={'label-radio'}
-                    /* Inline style to override React-Bootstrap interference */
-                    style={{marginLeft: 1 + 'rem'}}
-                >
-                    Routine
-                    <input
-                        className={'radio-second'}
-                        type={'radio'}
-                        id={'routine'}
-                        name={'priority'}
-                        value={'Routine'}
-                        onChange={radioButtonHandler}
-                        // checked={priority === 'routine'}
-                    />
-                </label>
-                <label
-                    htmlFor={'status'}
-                    /* Inline styling to override React-Bootstrap default styles */
-                    style={{
-                        marginTop: 1 + 'rem',
-                        marginLeft: 4 + 'rem'
-                    }}
-                >
-                    Status:
-                    <select
-                        id={'status'}
-                        name={'status'}
-                        onChange={selectHandler}
-                        style={{
-                            fontWeight: 900,
-                            color: '#800000'
+                            marginTop: 1 + 'rem',
+                            marginLeft: 4 + 'rem'
                         }}
                     >
-                        <option>--Select--</option>
-                        <option value={'Submitted'}>Submitted</option>
-                        <option value={'In progress'}>In progress</option>
-                        <option value={'Completed'}>Completed</option>
-                    </select>
-                </label>
+                        Status:
+                        <select
+                            id={'status'}
+                            name={'status'}
+                            onChange={selectHandler}
+                            style={{
+                                fontWeight: 900,
+                                color: '#800000'
+                            }}
+                        >
+                            <option>--Select--</option>
+                            <option value={'Submitted'}>Submitted</option>
+                            <option value={'In progress'}>In progress</option>
+                            <option value={'Completed'}>Completed</option>
+                        </select>
+                    </label></div>
                 <input
                     className={'btn-submit'}
                     type={'submit'}

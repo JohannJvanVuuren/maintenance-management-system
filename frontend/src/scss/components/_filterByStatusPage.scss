@@ -1,0 +1,21 @@
+/* Import to allow use of variables */
+@import '../abstract/variables';
+
+.filter-by-status-container {
+  select{
+    border: none;
+    padding: 1rem;
+    font-size: 1.4rem;
+    font-weight: 900;
+    text-align: center;
+    background-color: $light-nude;
+    outline: none;
+    border-radius: 1rem;
+    color: $dark-red;
+
+    .items {
+      font-weight: 900;
+      color: $dark-red;
+    }
+  }
+}

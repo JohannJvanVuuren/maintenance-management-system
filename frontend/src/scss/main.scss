@@ -4,13 +4,18 @@
 @import 'base/reset';
 @import 'base/typography';
 
+@import 'components/archiveButtons';
+@import 'components/filterByStatusPage';
 @import 'components/header';
 @import 'components/landingPage';
 @import 'components/submitJob';
-@import 'components/updatePage';
+@import 'components/table';
+@import 'components/updateButtons';
 
+@import 'layout/filterByStatusPage';
 @import 'layout/header';
 @import 'layout/landingPage';
 @import 'layout/submitJob';
+@import 'layout/updateJob';
 
 @import 'vendors/googleFonts';

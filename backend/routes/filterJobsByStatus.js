@@ -5,8 +5,9 @@ import express from 'express';
 const router = express.Router();
 
 /* Importing the log.controller db interaction controller */
-import * as logController from '../controllers/deleteJob.js';
+import { filterJobsByStatus } from '../controllers/log.controller.js';
 
-router.delete('/:id', logController.deleteJob);
+/* Setting up the filterJobsByStatus router and its controller */
+router.get('/:status', filterJobsByStatus);
 
 export default router;

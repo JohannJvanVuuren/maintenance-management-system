@@ -5,9 +5,9 @@ import express from 'express';
 const router = express.Router();
 
 /* Importing the log.controller db interaction controller */
-import { create } from '../controllers/log.controller.js';
+import { bulkStatusChange } from '../controllers/log.controller.js';
 
-/* Setting up the saveNewJob router and its controller */
-router.post('/', create);
+/* Setting up the bulkStatusChange router and its controller */
+router.patch('/', bulkStatusChange);
 
 export default router;

@@ -1,7 +1,7 @@
 /* Import of the axios client to handle requests to the backend */
 import axios from 'axios';
 /* Import of Link component from React Router to transfer state information to UpdateJobForm */
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 /* Import of React hooks used in this component */
 import {useEffect, useState} from "react";
 
@@ -40,70 +40,70 @@ export const UpdateInfoOfJob = () => {
     }, []); //No dependencies, so the hook will only run once when the page is rendered
 
     return (
-        /* Rendering of a React-bootstrap table suited for this purpose */
-        <Table
-            striped bordered hover variant="dark"
-            responsive
-            className={'mt-5'}
-            /* Inline style to override React-Bootstrap defaults */
-            style={{width: '90%', marginLeft: 'auto', marginRight: 'auto'}}
-        >
-            <thead>
-            <tr className={'table-header'}>
-                <th className={'h3'}>Unique Ref. No.</th>
-                <th className={'h3'}>Date</th>
-                <th className={'h3'}>Description</th>
-                <th className={'h3'}>Location</th>
-                <th className={'h3'}>Priority</th>
-                <th className={'h3'}>Status</th>
-                <th className={'h3'}>Click to update</th>
-            </tr>
-            </thead>
-            <tbody>
-            {/* The data is received back as an array of objects. So the Array.map method is used to map loop
+        <div>
+            <h1 className={'section-titles'}>Update Details</h1>
+            {/* Rendering of a React-bootstrap table suited for this purpose */}
+            <Table
+                striped bordered hover variant="dark"
+                responsive
+                className={'mt-5 table'}
+            >
+                <thead>
+                <tr className={'table-header'}>
+                    <th className={'h3'}>Unique Ref. No.</th>
+                    <th className={'h3'}>Date</th>
+                    <th className={'h3'}>Description</th>
+                    <th className={'h3'}>Location</th>
+                    <th className={'h3'}>Priority</th>
+                    <th className={'h3'}>Status</th>
+                    <th className={'h3'}>Click to update</th>
+                </tr>
+                </thead>
+                <tbody>
+                {/* The data is received back as an array of objects. So the Array.map method is used to map loop
                  through the array and display the data of the individual job objects */}
-            {jobs.map((job, index) => {
-                return (
-                    <tr key={index} className={'table-row'}>
-                        <td className={'h5'}>{job._id}</td>
-                        <td className={'h5'}>{dateFormatter(job.date)}</td>
-                        <td className={'h5'}>{job.description}</td>
-                        <td className={'h5'}>{job.location}</td>
-                        <td className={'h5'}>{job.priority}</td>
-                        <td className={'h5'}>{job.status}</td>
-                        <td>
-                            <Link
-                                to={'/updateJobForm'}
-                                className={'btn-update'}
-                                state={{
-                                    id: job._id,
-                                    date: job.date,
-                                    description: job.description,
-                                    location: job.location,
-                                    priority: job.priority,
-                                    status: job.status
-                                }}
-                            >
-                                <button
-                                    /* Inline styling used to override React-Bootstrap defaults */
-                                    style={{
-                                        border: 'none',
-                                        padding: 0.5 + 'rem',
-                                        fontWeight: 900,
-                                        textTransform: 'uppercase',
-                                        borderRadius: 0.5 + 'rem',
-                                        backgroundColor: '#800000',
-                                        color: '#F4E4D6'
-                                    }}
-                                >
-                                    Update
-                                </button>
-                            </Link>
-                        </td>
-                    </tr>
-                )
-            })}
-            </tbody>
-        </Table>
+                {jobs.map((job, index) => {
+                    if (job.__v === 0) {
+                        return (
+                            <tr key={index} className={'table-row'}>
+                                <td className={'h5'}>{job._id}</td>
+                                <td className={'h5'}>{dateFormatter(job.date)}</td>
+                                <td className={'h5'}>{job.description}</td>
+                                <td className={'h5'}>{job.location}</td>
+                                <td className={'h5'}>{job.priority}</td>
+                                <td className={'h5'}>{job.status}</td>
+                                <td>
+                                    <Link
+                                        to={'/updateJobForm'}
+                                        className={'btn-update'}
+                                        state={{
+                                            id: job._id,
+                                            date: job.date,
+                                            description: job.description,
+                                            location: job.location,
+                                            priority: job.priority,
+                                            status: job.status
+                                        }}
+                                    >
+                                        <button
+                                            className={'btn-update'}
+                                        >
+                                            Update
+                                        </button>
+                                    </Link>
+                                </td>
+                            </tr>
+                        )
+                    } else {
+                        return (
+                            <tr>
+                                <td colSpan={7}>No records to display</td>
+                            </tr>
+                        )
+                    }
+                })}
+                </tbody>
+            </Table>
+        </div>
     )
 }
