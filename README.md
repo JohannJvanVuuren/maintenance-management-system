@@ -1,8 +1,14 @@
 # Getting Started with Create React App
 
+## Index
+
+1. Introduction / About
+2. Installation
+3. Usage
+4. Author and Versioning
+
 ## Things to include
 
-Archival is done by deleting record. The reason for this is that the cloud archive service on Atlas is a paid service.  
 
 
 

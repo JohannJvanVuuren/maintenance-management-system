@@ -24,6 +24,7 @@ describe('<Header/> component', () => {
       expect(wrapper.find(Link)).to.have.lengthOf(9);
     })
 
+    /* Confirming that eight .btn-nav buttons are rendered */
     it('Renders eight button elements', () => {
         const wrapper = shallow(<Header />);
         expect(wrapper.find('.btn-nav')).to.have.lengthOf(8)

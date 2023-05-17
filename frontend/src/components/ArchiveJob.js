@@ -58,6 +58,7 @@ export const ArchiveJob = () => {
                 {/* The data is received back as an array of objects. So the Array.map method is used to map loop
                  through the array and display the data of the individual job objects */}
                 {jobs.map((job, index) => {
+                    /* Only non archived entries are displayed. */
                     if (job.__v === 0) {
                         return (
                             <tr key={index} className={'table-row'}>
@@ -71,6 +72,8 @@ export const ArchiveJob = () => {
                                     <button
                                         className={'btn-archive'}
                                         onClick={(event => {
+                                            /* Axios call to backend to pass on the id of the document that needs
+                                            * to be archived */
                                             event.preventDefault();
                                             const url = `http://localhost:8000/archiveJob/${job._id}`;
 

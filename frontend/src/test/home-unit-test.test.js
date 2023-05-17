@@ -23,6 +23,7 @@ describe('<LandingPage/> component', () => {
         expect(wrapper.find('h1')).to.have.lengthOf(1);
     })
 
+    /* Confirming that 3 p elements are rendered */
     it('Renders three p elements', () => {
         const wrapper = shallow(<LandingPage />);
         expect(wrapper.find('p')).to.have.lengthOf(3);

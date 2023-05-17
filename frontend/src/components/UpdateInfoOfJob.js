@@ -28,7 +28,7 @@ export const UpdateInfoOfJob = () => {
             field: 'date'
         }
 
-        /* axios call to the .../getJobList endpoint to get the information that needs to be displayed
+        /* axios call to the .../getJobListByDate endpoint to get the information that needs to be displayed
         * in this component */
         axios.get(url, config)
             .then(response => {
@@ -63,6 +63,7 @@ export const UpdateInfoOfJob = () => {
                 {/* The data is received back as an array of objects. So the Array.map method is used to map loop
                  through the array and display the data of the individual job objects */}
                 {jobs.map((job, index) => {
+                    /* Only non-archived documents are displayed */
                     if (job.__v === 0) {
                         return (
                             <tr key={index} className={'table-row'}>

@@ -23,6 +23,7 @@ export const SubmitJob = () => {
         setPriority(event.target.value);
     }
 
+    /* The change handler of the status selection dropdown list */
     const selectHandler = (event) => {
         setStatus(event.target.value);
     }
@@ -103,8 +104,6 @@ export const SubmitJob = () => {
                         />
                     </label>
                 </div>
-                {/*<p>Priority</p>*/}
-
                 <div className={'submit-form-radio-buttons'}>
                     <p>Priority</p>
                     <label
@@ -118,7 +117,6 @@ export const SubmitJob = () => {
                             name={'priority'}
                             value={'Urgent'}
                             onChange={radioButtonHandler}
-                            // checked={priority === 'urgent'}
                         />
                     </label>
                     <label
@@ -135,7 +133,6 @@ export const SubmitJob = () => {
                             name={'priority'}
                             value={'Routine'}
                             onChange={radioButtonHandler}
-                            // checked={priority === 'routine'}
                         />
                     </label>
                 </div>

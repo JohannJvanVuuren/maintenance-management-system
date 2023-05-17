@@ -1,3 +1,4 @@
+/* Background and overflow styling that only works on when specified on the App component */
 body {
     background-image: url('./scss/images/Escalator.png');
     background-attachment: fixed;

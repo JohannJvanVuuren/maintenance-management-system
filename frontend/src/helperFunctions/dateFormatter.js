@@ -1,3 +1,5 @@
+/* This is a helper function to convert the date stored by MongoDB into a user friendly date only. The
+* JavaScript date handling methods are used to do this */
 export const dateFormatter = (date) => {
     const dateToConvert = new Date(date);
     const year = dateToConvert.getFullYear().toString();
@@ -9,7 +11,6 @@ export const dateFormatter = (date) => {
     if (day.length === 1) {
         day = `0${day}`;
     }
-
 
     return `${year}-${month}-${day}`;
 

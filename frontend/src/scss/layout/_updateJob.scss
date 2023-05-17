@@ -1,3 +1,4 @@
+/* Layout of the submit-job form container and components */
 .submit-job-container {
 
   form {
@@ -9,11 +10,9 @@
     margin-right: 0;
   }
 
-
   .label {
     width: 30rem;
     display: flex;
     justify-content: space-between;
   }
-
 }

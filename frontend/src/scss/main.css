@@ -19,6 +19,7 @@ html {
   font-size: 62.5%;
 }
 
+/* Setting of the global font */
 body {
   font-family: "Lato", Arial, Helvetica, sans-serif;
 }
@@ -48,6 +49,7 @@ body {
   color: #F4E4D6;
 }
 
+/* Typography of the headers of the different views of data*/
 .section-titles {
   text-align: center;
   text-transform: uppercase;
@@ -101,6 +103,7 @@ body {
   color: #800000;
 }
 
+/* Styling of the archive buttons on the archiveJob render */
 .btn-archive {
   border: none;
   padding: 0.5rem;
@@ -117,6 +120,7 @@ body {
 /* Nude */
 /* Silvers */
 /* Shadows */
+/* Styling of the filter by status container and dropdown menu */
 .filter-by-status-container select {
   border: none;
   padding: 1rem;
@@ -191,20 +195,18 @@ form .btn-submit:active {
   box-shadow: 2px 2px 2px #000000, -0.5px -0.5px 1.5px #F4E4D6;
 }
 
+/* General styling of the tables throughout the application */
 .table {
   box-shadow: 1rem 1rem 3rem #000000;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
 }
-.table h3 {
-  color: #800000;
-}
 .table select {
   font-weight: 900;
-  color: #800000;
 }
 
+/* Styling of the update buttons on the updateJob render */
 .btn-update {
   border: none;
   padding: 0.5rem;
@@ -215,6 +217,7 @@ form .btn-submit:active {
   color: #F4E4D6;
 }
 
+/* Layout of the filter by status page container and select field */
 .filter-by-status-container {
   display: flex;
   flex-direction: column;
@@ -250,7 +253,7 @@ form .btn-submit:active {
   padding: 4rem;
 }
 
-/* Layout of the submit job form */
+/* Layout of the submit job form and input components */
 .submit-job-container form {
   margin: 8rem auto;
   width: 40rem;
@@ -293,6 +296,7 @@ form .btn-submit:active {
   padding: 1rem;
 }
 
+/* Layout of the submit-job form container and components */
 .submit-job-container form {
   width: 35rem;
 }

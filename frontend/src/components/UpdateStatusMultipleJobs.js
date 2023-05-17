@@ -21,7 +21,7 @@ export const UpdateStatusMultipleJobs = () => {
         /* Setup of configuration of the axios call */
         const url = 'http://localhost:8000/getJobListByStatus';
 
-        /* axios call to the .../getJobList endpoint to get the information that needs to be displayed
+        /* axios call to the .../getJobListByStatus endpoint to get the information that needs to be displayed
         * in this component */
         axios.get(url)
             .then(response => {
@@ -34,23 +34,21 @@ export const UpdateStatusMultipleJobs = () => {
 
     const statusChangeBulkHandler = (event) => {
 
+        /* Setting up of the axios argument and the status variable that will be sent in the body of the
+        patch request */
         const url = 'http://localhost:8000/bulkStatusChange';
         const config = {
             jobs: statusUpdate
         }
 
+        /* The axios call to the backend with the above arguments */
         axios.patch(url, config)
             .then(response => {
                 console.log(response.data);
             })
             .catch(error => {
-                if (error.response) {
-                    console.log("Data ", error.response.data);
-                    console.log("Status ", error.response.status);
-                    console.log("Headers ", error.response.headers);
-                }
+                console.log(error);
             })
-
     }
 
     return (
@@ -76,6 +74,7 @@ export const UpdateStatusMultipleJobs = () => {
                 {/* The data is received back as an array of objects. So the Array.map method is used to map loop
                  through the array and display the data of the individual job objects */}
                 {jobs.map((job, index) => {
+                    /* Only displaying non-archived items */
                     if (job.__v === 0) {
                         return (
                             <tr key={index} className={'table-row'}>
@@ -87,6 +86,7 @@ export const UpdateStatusMultipleJobs = () => {
                                 <td className={'h5'}>
                                     <select
                                         name={'status'}
+                                        /* Creating an array of jobs where the status needs to be updated */
                                         onChange={(event) => {
                                             setStatusUpdate([
                                                 ...statusUpdate,
@@ -116,6 +116,8 @@ export const UpdateStatusMultipleJobs = () => {
                     <td colSpan={6}>No records to display</td>
                 </tr>
                 <tr>
+                    {/* This code merely makes an additional row with blank cells except for the last cell which
+                     contains the bulk update button*/}
                     <td></td>
                     <td></td>
                     <td></td>

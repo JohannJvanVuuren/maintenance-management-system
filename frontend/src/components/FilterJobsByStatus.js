@@ -21,7 +21,7 @@ export const FilterJobsByStatus = () => {
         /* Setup of configuration of the axios call */
         const url = `http://localhost:8000/filterJobsByStatus/${status}`;
 
-        /* axios call to the .../getJobList endpoint to get the information that needs to be displayed
+        /* axios call to the .../filterJobsByStatus endpoint to get the information that needs to be displayed
         * in this component */
         axios.get(url)
             .then(response => {
@@ -35,9 +35,9 @@ export const FilterJobsByStatus = () => {
     }, [status]);
 
     return (
-        /* Rendering of a React-bootstrap table suited for this purpose */
         <div className={'filter-by-status-container'}>
             <h1 className={'section-titles'}>Filter Jobs by status</h1>
+            {/* Allowing the user to select a desired status and then setting the Status state to that choice */}
             <select value={status} onChange={(event) => {
                 event.preventDefault();
                 setStatus(event.target.value);
@@ -47,6 +47,7 @@ export const FilterJobsByStatus = () => {
                 <option className={'items'} value={'In progress'}>In progress</option>
                 <option className={'items'} value={'Completed'}>Completed</option>
             </select>
+            {/* Rendering of a React-bootstrap table suited for this purpose */}
             <Table
                 striped bordered hover variant="dark"
                 responsive
@@ -66,6 +67,7 @@ export const FilterJobsByStatus = () => {
                 {/* The data is received back as an array of objects. So the Array.map method is used to map loop
                          through the array and display the data of the individual job objects */}
                 {jobs.map((job, index) => {
+                    /* Only non-archived documents are displayed */
                     if (job.__v === 0) {
                     return (
                         <tr key={index} className={'table-row'}>

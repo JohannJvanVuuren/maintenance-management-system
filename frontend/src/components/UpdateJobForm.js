@@ -42,13 +42,13 @@ export const UpdateJobForm = () => {
         setStatus(event.target.value);
     }
 
-    /* The form's submit handler which also changes the status to 'Submitted' */
+    /* The form's submit handler which sets the information in the body of the axios post request */
     const submitHandler = (event) => {
 
         event.preventDefault();
 
         /* Configurations for the axios request to the backend that will send the information to be
-        * stored in the database */
+        * updated in the database */
         const url = `http://localhost:8000/updateJob`;
         const config = {
             id: id,
@@ -70,7 +70,7 @@ export const UpdateJobForm = () => {
             })
     }
 
-    /* The rendering of the submit job input form. Inline styling had to be used in a few instances to
+    /* The rendering of the update job form. Inline styling had to be used in a few instances to
     * override the React-Bootstrap default styles */
     return (
         <div className={'submit-job-container'}>

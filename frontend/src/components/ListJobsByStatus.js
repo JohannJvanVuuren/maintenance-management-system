@@ -21,7 +21,7 @@ export const ListJobsByStatus = () => {
         /* Setup of configuration of the axios call */
         const url = 'http://localhost:8000/getJobListByStatus';
 
-        /* axios call to the .../getJobList endpoint to get the information that needs to be displayed
+        /* axios call to the .../getJobListByStatus endpoint to get the information that needs to be displayed
         * in this component */
         axios.get(url)
             .then(response => {
@@ -55,6 +55,7 @@ export const ListJobsByStatus = () => {
                 {/* The data is received back as an array of objects. So the Array.map method is used to map loop
                  through the array and display the data of the individual job objects */}
                 {jobs.map((job, index) => {
+                    /* Only non-archived documents will be displayed */
                     if (job.__v === 0) {
                         return (
                             <tr key={index} className={'table-row'}>
@@ -79,4 +80,3 @@ export const ListJobsByStatus = () => {
         </div>
     )
 }
-

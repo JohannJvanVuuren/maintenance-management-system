@@ -20,7 +20,7 @@ export const ViewArchive = () => {
         /* Setup of configuration of the axios call */
         const url = 'http://localhost:8000/getJobListByDate';
 
-        /* axios call to the .../getJobList endpoint to get the information that needs to be displayed
+        /* axios call to the .../getJobListByDate endpoint to get the information that needs to be displayed
         * in this component */
         axios.get(url)
             .then(response => {
@@ -53,6 +53,7 @@ export const ViewArchive = () => {
                 {/* The data is received back as an array of objects. So the Array.map method is used to map loop
                  through the array and display the data of the individual job objects */}
                 {jobs.map((job, index) => {
+                    /* Unlike all the other components, this one will only show the documents that are archived */
                     if (job.__v === 1) {
                         return (
                             <tr key={index} className={'table-row'}>
