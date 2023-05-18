@@ -32,7 +32,7 @@ export const UpdateStatusMultipleJobs = () => {
             })
     }, []); //No dependencies, so the hook will only run once when the page is rendered
 
-    const statusChangeBulkHandler = (event) => {
+    const statusChangeBulkHandler = () => {
 
         /* Setting up of the axios argument and the status variable that will be sent in the body of the
         patch request */

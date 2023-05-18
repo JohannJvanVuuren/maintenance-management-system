@@ -42,7 +42,7 @@ export const FilterJobsByStatus = () => {
                 event.preventDefault();
                 setStatus(event.target.value);
             }}>
-                <option className={'items'} disbaled>--Please select a filter--</option>
+                <option className={'items'} disabled={true}>--Please select a filter--</option>
                 <option className={'items'} value={'Submitted'}>Submitted</option>
                 <option className={'items'} value={'In progress'}>In progress</option>
                 <option className={'items'} value={'Completed'}>Completed</option>
