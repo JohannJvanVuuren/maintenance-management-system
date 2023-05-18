@@ -118,7 +118,7 @@ export const archiveJob = async (req, res) => {
     const query = {_id: new ObjectId(req.params.id) };
 
     try {
-        await Job.findOneAndUpdate(query, {__v: true});
+        await Job.findOneAndUpdate(query, {archive: true});
         res.status(200);
     } catch (err) {
         res.status(500).send({message: 'There was an error while trying to archive the job.'})

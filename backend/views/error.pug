@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  div.error-wrapper
+    div.error-flex-container
+      h1= message
+      h2 #{error.status}
+      //pre #{error.stack} Commented out for now, but this will not print in a production environment
+

@@ -54,7 +54,7 @@ export const ViewArchive = () => {
                  through the array and display the data of the individual job objects */}
                 {jobs.map((job, index) => {
                     /* Unlike all the other components, this one will only show the documents that are archived */
-                    if (job.__v === 1) {
+                    if (job.archive === true) {
                         return (
                             <tr key={index} className={'table-row'}>
                                 <td className={'h5'}>{job._id}</td>
@@ -68,7 +68,8 @@ export const ViewArchive = () => {
                     } else {
                         return (
                             <tr>
-                                <td colSpan={7}>No archived jobs on record</td>
+                                <td colSpan={7}>
+                                </td>
                             </tr>
                         )
                     }

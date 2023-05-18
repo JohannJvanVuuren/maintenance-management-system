@@ -27,7 +27,8 @@ const { Schema } = mongoose;
         },
         archive: {
             type: Boolean,
-            required: false
+            required: false,
+            default: false
         }
     })
 

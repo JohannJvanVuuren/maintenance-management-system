@@ -1,0 +1,48 @@
+extends layout
+block content
+  body
+    div.global-container
+      div.index-container
+        h1.heading-title= title
+        h2 This application calculates the total fleet insurance cost based on the individual kilometers driven entered.
+        p Please click in the input field when entering a new vehicle's kilometers to reset the field
+        form#kilometer-input-form(
+          action='/fleetInsuranceCost'
+          method='POST'
+          class='form-kilometers'
+        )
+          input#kilometer-input(
+            type='text'
+            name='kilometers'
+            class='form-input'
+            placeholder='Kilometers Per Individual Vehicle'
+          )
+          input#button-submit(
+            type='submit'
+            class='button-submit'
+          )
+        div.buttons-executive
+          form(
+            action='/fleetInsuranceCost'
+            method='GET'
+            class='form-calculate'
+          )
+            input(
+              type='submit'
+              value='Calculate'
+              class='button-calculate'
+            )
+          form(
+            action='/clearApplication'
+            method='DELETE'
+            class='form-clear'
+          )
+            input(
+              type='submit'
+              value='Clear'
+              class='button-delete'
+            )
+        h1.heading-results Total Insurance Due
+        div.result-box
+          h2= result
+  script(src='/javascripts/submitScript.js')

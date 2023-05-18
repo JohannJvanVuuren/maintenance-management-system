@@ -75,7 +75,7 @@ export const UpdateStatusMultipleJobs = () => {
                  through the array and display the data of the individual job objects */}
                 {jobs.map((job, index) => {
                     /* Only displaying non-archived items */
-                    if (job.__v === 0) {
+                    if (job.archive === false) {
                         return (
                             <tr key={index} className={'table-row'}>
                                 <td className={'h5'}>{job._id}</td>
@@ -113,7 +113,8 @@ export const UpdateStatusMultipleJobs = () => {
                     }
                 })}
                 <tr>
-                    <td colSpan={6}>No records to display</td>
+                    <td colSpan={6}>
+                    </td>
                 </tr>
                 <tr>
                     {/* This code merely makes an additional row with blank cells except for the last cell which

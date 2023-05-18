@@ -64,7 +64,7 @@ export const UpdateInfoOfJob = () => {
                  through the array and display the data of the individual job objects */}
                 {jobs.map((job, index) => {
                     /* Only non-archived documents are displayed */
-                    if (job.__v === 0) {
+                    if (job.archive === false) {
                         return (
                             <tr key={index} className={'table-row'}>
                                 <td className={'h5'}>{job._id}</td>
@@ -98,7 +98,8 @@ export const UpdateInfoOfJob = () => {
                     } else {
                         return (
                             <tr>
-                                <td colSpan={7}>No records to display</td>
+                                <td colSpan={7}>
+                                </td>
                             </tr>
                         )
                     }

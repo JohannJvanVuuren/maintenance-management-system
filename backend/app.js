@@ -2,6 +2,7 @@
 import createError from 'http-errors';
 import express from 'express';
 import path from 'path';
+import {fileURLToPath} from 'url';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import helmet from 'helmet';
@@ -22,8 +23,14 @@ import bulkStatusChangeRouter from './routes/bulkStatusChange.js';
 const app = express();
 
 // view engine setup
-app.set('views', ('./views'));
-app.set('view engine', 'jade');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+app.use(
+    '/static',
+    express.static(path.join(__dirname, 'public'))
+)
+app.set('views', './views');
+app.set('view engine', 'pug');
 
 app.use(cors());
 app.use(logger('dev'));
